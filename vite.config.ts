@@ -12,4 +12,7 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Force the Node server preset for self-hosting (e.g. Render). This override only
+  // applies outside a Lovable build, so Lovable hosting keeps its Cloudflare target.
+  nitro: { preset: "node-server" },
 });
